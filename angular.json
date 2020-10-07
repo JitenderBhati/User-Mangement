@@ -23,14 +23,23 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "node_modules/uui-framework/bootstrap/css/bootstrap.min.css",
+              "node_modules/uui-framework/fonts/font-awesome/css/font-awesome.min.css",
+              "node_modules/uui-framework/js/lib/components/DataTables-1.10.2/css/jquery.dataTables.min.css",
+
+              "node_modules/uui-framework/less/uui-all.less",
+              "node_modules/uui-framework/css/lib/components/jquery.mCustomScrollbar.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/uui-framework/js/lib/jquery-1.12.0.min.js",
+              "node_modules/uui-framework/bootstrap/js/bootstrap.min.js",
+              "node_modules/uui-framework/js/lib/components/DataTables-1.10.2/js/jquery.dataTables.min.js",
+              "node_modules/uui-framework/js/uui/uui-core.js",
+              "node_modules/uui-framework//js/lib/components/jquery.mCustomScrollbar.concat.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,13 +96,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -105,9 +109,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -123,6 +125,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "UserManagement"
 }

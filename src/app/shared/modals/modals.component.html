@@ -1,0 +1,52 @@
+<button
+  type="button"
+  class="uui-button {{ color }}"
+  data-toggle="modal"
+  data-target="#popup1"
+>
+  {{ name }}
+</button>
+<div
+  class="modal uui-modal fade"
+  id="popup1"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Operation Confirmation</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-hidden="true"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure want to delete this record?</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          data-dismiss="modal"
+          class="uui-button transparent"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          data-dismiss="modal"
+          class="uui-button lime-green"
+          (click)="onConfirmation()"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
