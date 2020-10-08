@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~10.0.9",
     "@angular/platform-browser-dynamic": "~10.0.9",
     "@angular/router": "~10.0.9",
+    "jsonwebtoken": "^8.5.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "uui-framework": "git+https://git.epam.com/epm-uui/uui-framework.git",

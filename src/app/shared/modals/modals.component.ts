@@ -7,8 +7,8 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import { User } from 'src/app/dto/user';
-import { UserService } from 'src/app/service/user.service';
+import {User} from 'src/app/dto/user';
+import {UserService} from 'src/app/service/user.service';
 
 @Component({
   selector: 'um-modals',
@@ -16,7 +16,8 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./modals.component.scss'],
 })
 export class ModalsComponent implements OnInit {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) {
+  }
 
   @Input() show: boolean = false;
   @Input() color: String;
@@ -24,10 +25,13 @@ export class ModalsComponent implements OnInit {
   @Output() notify = new EventEmitter<Boolean>();
   user: User;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
   onConfirmation() {
     this.notify.emit(true);
   }
 
-  ngOnChanges() {}
+  ngOnChanges() {
+  }
 }

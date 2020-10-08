@@ -5,6 +5,7 @@ import {
   RouteConfigLoadStart,
   RouteConfigLoadEnd,
 } from '@angular/router';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 declare var window: any;
 
@@ -17,7 +18,11 @@ export class HeaderComponent implements OnInit {
   showMenu: boolean = true;
   showLogOut: boolean = true;
   isLoading: boolean = false;
-  constructor(private router: Router) {
+
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) {
     router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         if (event['url'] == '/auth/login' || event['url'] == '/auth/register') {
@@ -41,5 +46,9 @@ export class HeaderComponent implements OnInit {
     //Initialize UUI navigation
     window.UUI.Navigation.init();
     window.UUI.Header_Tools.init();
+  }
+
+  loggedOut() {
+    this.authenticationService.logout();
   }
 }

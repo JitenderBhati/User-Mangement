@@ -168,6 +168,7 @@ figure {
   margin-bottom: 25px;
   overflow: hidden;
 }
+
 .form-group:last-child {
   margin-bottom: 0px;
 }
@@ -175,27 +176,35 @@ figure {
 input::-webkit-input-placeholder {
   color: #999;
 }
+
 input::-moz-placeholder {
   color: #999;
 }
+
 input:-ms-input-placeholder {
   color: #999;
 }
+
 input:-moz-placeholder {
   color: #999;
 }
+
 input:focus {
   border-bottom: 1px solid #222;
 }
+
 input:focus::-webkit-input-placeholder {
   color: #222;
 }
+
 input:focus::-moz-placeholder {
   color: #222;
 }
+
 input:focus:-ms-input-placeholder {
   color: #222;
 }
+
 input:focus:-moz-placeholder {
   color: #222;
 }

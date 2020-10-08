@@ -5,6 +5,7 @@ import { User } from '../dto/user';
 import { UserService } from '../service/user.service';
 
 declare var $: any;
+
 @Component({
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
@@ -16,12 +17,14 @@ export class UsersComponent implements OnInit {
   selectedUser: User;
   roles: Array<String>;
   userData: Array<User> = [];
+
   constructor(private readonly userService: UserService) {}
 
   ngOnInit(): void {
     $('.uui-table.dynamic').dataTable();
-    this.userData = this.userService.fetchAllRegisterdUser();
-    this.roles = this.userService.roles;
+    // this.userData = this.userService.fetchAllRegisterdUser();
+    this.userService.fetchAllRegisterdUser();
+    // this.roles = this.userService.roles;
   }
 
   updateUser() {

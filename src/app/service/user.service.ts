@@ -1,39 +1,29 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
+
 import { User } from '../dto/user';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor() {}
-  users: Array<User> = [
-    {
-      id: 1,
-      name: 'Jitender',
-      email: 'jkrajput24@gmail.com',
-      password: 'mydesire',
-      role: 'Admin',
-    },
-    {
-      id: 2,
-      name: 'Nisha',
-      email: 'nisha@gmail.com',
-      password: 'mydesire',
-      role: 'User',
-    },
-  ];
+  private currentUserSubject: BehaviorSubject<User>;
+  public currentUser: Observable<User>;
+  constructor(private http: HttpClient) {}
 
-  roles: Array<String> = ['Admin', 'User'];
-  fetchAllRegisterdUser(): Array<User> {
-    return this.users;
+  fetchAllRegisterdUser() {
+    return this.http
+      .get(environment.api_endpoint + environment.getRegisteredUser, {
+        observe: 'response',
+      })
+      .subscribe((data) => console.log(data));
   }
 
   fetchUserById(id: number): User {
-    return this.users.find((user) => user.id == id);
+    return null;
   }
 
-  removeUserById(id: number) {
-    this.users.splice(id - 1, 1);
-  }
+  removeUserById(id: number) {}
 }
